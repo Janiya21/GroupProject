@@ -19,6 +19,8 @@
         var Latitude ;
         var Longitude;
         var x = document.getElementById("demo");
+        var cityLatitude = 6.9532;
+        var cityLongitude = 79.9026;
 
         function getLocation() {
             if (navigator.geolocation) {
@@ -33,7 +35,16 @@
             Longitude = position.coords.longitude;
             x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
 
+            compareLocations();
+        }
 
+        function compareLocations(){
+            if(Latitude<cityLatitude && Longitude<cityLongitude){
+                alert("Location in panudura");
+            }
+            else{
+                alert("Outside of Panadura");
+            }
         }
     </script>
 </body>
